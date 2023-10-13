@@ -5,10 +5,7 @@ import LibraryManagementSystem.example.LibraryManagementSystem.Entities.Service.
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequestMapping("/card")
@@ -27,10 +24,10 @@ public class CardController {
 
  }
 
- @PostMapping("/studentAssociatedWithPlainCard")
+ @PutMapping ("/studentAssociatedWithPlainCard")
     public  ResponseEntity associatedWithPlainCard(@RequestParam("cardId") Integer cardId,
                                                     @RequestParam("studentId") Integer studentId){
-
+     cardService.associatedWithPlainCard(cardId, studentId);
     String response = "the card with card number "+ cardId + " is associated with the student who is having the studentId as "+ studentId + " successfully";
     return new ResponseEntity(response , HttpStatus.OK);
  }

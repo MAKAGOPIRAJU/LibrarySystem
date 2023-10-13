@@ -34,12 +34,12 @@ public class CardService {
 
         libraryCard.setCardStatus(CardStatus.NEW);
 
-        cardRepository.save(libraryCard); // add this newly generated card into the database
+       libraryCard =  cardRepository.save(libraryCard); // add this newly generated card into the database
 
         return  libraryCard;
     }
 
-    public void associatedWithPlainCard(Integer cardId , Integer studentId) {
+    public void  associatedWithPlainCard(Integer cardId , Integer studentId) {
 
         // 1 . update the attribute in libraryCard
 
@@ -99,6 +99,8 @@ public class CardService {
         //because in the student entity we have the casecade function so it will caseCade the all with child table
 
         studentRepoistry.save(student);
+
+
     }
 
 }
