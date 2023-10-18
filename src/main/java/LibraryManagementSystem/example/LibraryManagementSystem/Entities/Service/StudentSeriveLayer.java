@@ -19,7 +19,6 @@ public class StudentSeriveLayer {
       // now all the List crud repository can used in jpa repository because it was interface of that then listCrud repository will use the all
       // methods in crud repository hence save was come from here
         studentRepoistry.save(student);
-
         return "Student add succesfully to Db!";
     }
 

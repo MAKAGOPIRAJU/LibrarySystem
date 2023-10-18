@@ -6,6 +6,8 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.*;
+
 @Entity
 @Table(name = "libraryCard")
 @Getter
@@ -34,4 +36,9 @@ public class LibraryCard {
     private  Student student;//which table we would like to connect (which entity we would like to connect)
 
 
+    // connect the transcation
+    // library card is parent and transcations is child
+
+    @OneToMany(mappedBy = "libraryCard",cascade = CascadeType.ALL)
+    List<Transcations> transcationsList = new ArrayList<>();
 }
