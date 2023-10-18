@@ -29,5 +29,10 @@ public class BookService {
         return "add the book  " + book.getBookName() + " written by " + authorObj.getAuthorName()+ " into to Db !";
     }
 
+    public  Book bookName(String bookName) {
 
+        Book book = bookRepoistry.findBookByBookName(bookName);
+
+        return book;
+    }
 }

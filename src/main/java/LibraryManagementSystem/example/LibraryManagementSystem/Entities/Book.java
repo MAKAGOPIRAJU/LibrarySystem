@@ -39,7 +39,7 @@ public class Book {
  private  double rating;
 
  @ManyToOne
-// @JoinColumn
+ @JoinColumn
  private Author author;
 
  //connect to transactions

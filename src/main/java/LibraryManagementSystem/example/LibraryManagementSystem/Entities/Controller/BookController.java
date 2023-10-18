@@ -26,7 +26,11 @@ public class BookController {
             return new ResponseEntity(e.getMessage(), HttpStatus.BAD_REQUEST);
         }
     }
+    @GetMapping("/getBook")
+    public Book getBook(@RequestParam("bookName") String name) {
 
+        return bookService.bookName(name);
+    }
 
     }
 

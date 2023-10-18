@@ -24,6 +24,7 @@ public class LibraryCard {
     // my sql will only understand the primitive data types to understand the enum datatype we use the above annotation
     private  CardStatus cardStatus;
 
+    private Integer noOfBooksTaken = 0;
     /*
      if the parent class author and child class was book so i need to create the foreign key in child class from many books have single author
      hence it will be many to one

@@ -1,12 +1,9 @@
 package LibraryManagementSystem.example.LibraryManagementSystem.Entities.Repoistry;
 
-import LibraryManagementSystem.example.LibraryManagementSystem.Entities.LibraryCard;
+import LibraryManagementSystem.example.LibraryManagementSystem.Entities.Transcations;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 @Repository
-public interface CardRepository extends JpaRepository<LibraryCard,Integer> {
-
-
-    LibraryCard findByCardId(Integer cardId);
+public interface TransactionRepository extends JpaRepository<Transcations , Integer> {
 }

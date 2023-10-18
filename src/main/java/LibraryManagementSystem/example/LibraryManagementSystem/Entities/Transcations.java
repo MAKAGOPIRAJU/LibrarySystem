@@ -1,5 +1,6 @@
 package LibraryManagementSystem.example.LibraryManagementSystem.Entities;
 
+import LibraryManagementSystem.example.LibraryManagementSystem.Enums.TransactionStatus;
 import jakarta.persistence.*;
 import lombok.*;
 import org.hibernate.annotations.CreationTimestamp;
@@ -26,18 +27,18 @@ public class Transcations {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer transcationId;
 
-    private Date issuedDate;
-
     private Date returnDate;
 
     private Integer fine;
+
+    @Enumerated(value = EnumType.STRING)
+    private TransactionStatus transactionStatus;
 
     @CreationTimestamp
     private Date createdOn;// the day of its created it was automatically handled by spring
 
     @UpdateTimestamp
     private Date lastModified;// the day of its last modified handled by spring automatically
-
 
     //connect to book
     @ManyToOne
